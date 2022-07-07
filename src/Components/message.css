@@ -1,0 +1,23 @@
+#mine {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+#your {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.messageContainer {
+  color: #7950f2;
+  padding: 20px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messageContainer__span {
+  font-size: 18px;
+  color: #000;
+}

@@ -1,0 +1,33 @@
+.container__header {
+  height: 80px;
+  background-color: #7950f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container__header__h1 {
+  word-spacing: 0.3cm;
+}
+
+.container__header__h1__span {
+  text-decoration: underline;
+}
+
+.container__activity {
+  height: 712px;
+  border-bottom: 5px solid #7950f2;
+}
+
+.Default {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: #7950f2;
+  word-spacing: 0.2cm;
+}

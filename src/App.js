@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import SignUp from './Pages/SignUp';
+import SignIn from './Pages/SignIn';
+import Logged from './Pages/Logged';
 
 function App() {
+  const [signUp,setSignUp] = useState(true);
+  const [signIn,setSignIn] = useState(false);
+  const [logged,setLogged] = useState(false);
+
+  const [data,setData] = useState('');
+
+  let fromSignUptoIn = ()=>{
+    setSignIn(true);
+    setSignUp(false);
+    setLogged(false);
+  }
+
+  let fromSignIntoUp = ()=>{
+    setSignIn(false);
+    setSignUp(true);
+    setLogged(false);
+  }
+
+  let loggedin = (username)=>{
+    setSignIn(false);
+    setSignUp(false);
+    setLogged(true);
+    setData(username);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {signUp && <SignUp signIn={fromSignUptoIn} />}
+        {signIn && <SignIn loggedIn={loggedin} signUp={fromSignIntoUp} />}
+        {logged && <Logged username={data} />}
     </div>
   );
 }
